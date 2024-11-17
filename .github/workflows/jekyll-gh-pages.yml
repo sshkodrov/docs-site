@@ -65,7 +65,17 @@ jobs:
               output="${input%/README.md}/index.adoc"
               echo "Converting $input to $output"
               pandoc "$input" -o "$output"
+              # Check if the conversion worked
+              if [ -f "$output" ]; then
+                echo "Conversion successful: $output"
+              else
+                echo "Error: Conversion failed for $input"
+              fi
             ' {} \;
+    
+            # List files in the docs directory to ensure the index.adoc exists
+            echo "Listing files in $dir/docs"
+            ls -l $dir/docs
           fi
         done
 
