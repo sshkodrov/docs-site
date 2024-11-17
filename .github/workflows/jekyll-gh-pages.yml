@@ -40,7 +40,8 @@ jobs:
         done
 
     - name: Build documentation with Antora
-      run: npx antora playbook.yml
+      run: | 
+          antora playbook.yml
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
