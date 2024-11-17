@@ -1,0 +1,41 @@
+name: Build and Deploy Documentation Site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # - name: Set up Node.js
+    #   uses: actions/setup-node@v3
+    #   with:
+    #     node-version: '16'
+
+    # - name: Install dependencies
+    #   run: npm install
+
+    - name: Convert Markdown to AsciiDoc
+      run: |
+        for dir in test1 test2 test3 test4; do
+          find $dir/docs -name "*.md" -exec pandoc {} -o {}.adoc \;
+        done
+
+    - name: Build documentation with Antora
+      run: npx antora playbook.yml
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        personal_token: ${{ secrets.MY_ANTORA_TOKEN }}
+        publish_dir: ./build/site
+        publish_branch: gh-pages
