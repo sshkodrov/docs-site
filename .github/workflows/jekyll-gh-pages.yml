@@ -31,17 +31,23 @@ jobs:
         git clone https://github.com/sshkodrov/test3.git
         git clone https://github.com/sshkodrov/test4.git
 
-    - name: Convert Markdown to AsciiDoc
+    - name: Convert README.md to index.adoc
       run: |
-        for dir in test1 test2 test3 test4; do
-          if [ -d "$dir/docs" ]; then
-            # Find all .md files in the docs directories
-            find $dir/docs -name "*.md" -exec bash -c '
-              # For each .md file, convert it to index.adoc in the same docs directory
-              pandoc "$0" -o "${0%/*}/index.adoc"
-            ' {} \;
-          fi
-        done
+           for dir in test1 test2 test3 test4; do
+             if [ -d "$dir/docs" ]; then
+              echo "Converting README.md to index.adoc in $dir/docs"
+              # Find each README.md file and convert it to index.adoc
+              find $dir/docs -name "README.md" -exec bash -c '
+               input="$0"
+              # Output the converted file as index.adoc in the same directory
+                output="${input%/README.md}/index.adoc"
+                 echo "Converting $input to $output"
+                  pandoc "$input" -o "$output"
+                ' {} \;
+              fi
+            done
+              shell: /usr/bin/bash -e {0}
+        
 
     - name: Build documentation with Antora
       run: |
