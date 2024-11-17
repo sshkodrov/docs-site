@@ -24,10 +24,19 @@ jobs:
     # - name: Install dependencies
     #   run: npm install
 
+    - name: Clone the test1 repository
+      run: |
+        git clone https://github.com/sshkodrov/test1.git
+        git clone https://github.com/sshkodrov/test2.git
+        git clone https://github.com/sshkodrov/test3.git
+        git clone https://github.com/sshkodrov/test4.git
+
     - name: Convert Markdown to AsciiDoc
       run: |
         for dir in test1 test2 test3 test4; do
-          find $dir/docs -name "*.md" -exec pandoc {} -o {}.adoc \;
+          if [ -d "$dir/docs" ]; then
+            find $dir/docs -name "*.md" -exec bash -c 'pandoc "$0" -o "${0%.md}.adoc"' {} \;
+          fi
         done
 
     - name: Build documentation with Antora
