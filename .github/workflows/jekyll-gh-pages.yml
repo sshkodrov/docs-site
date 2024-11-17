@@ -48,22 +48,22 @@ jobs:
           fi
         done
         
-    - name: Commit converted index.adoc back to the repository
-      run: |
-        for dir in test1 test2 test3 test4; do
-          if [ -f "$dir/docs/index.adoc" ]; then
-            cd $dir
-            git config user.name "github-actions"
-            git config user.email "github-actions@github.com"
+    # - name: Commit converted index.adoc back to the repository
+    #   run: |
+    #     for dir in test1 test2 test3 test4; do
+    #       if [ -f "$dir/docs/index.adoc" ]; then
+    #         cd $dir
+    #         git config user.name "github-actions"
+    #         git config user.email "github-actions@github.com"
             
-            # Set the repository URL to use the GitHub token for authentication
-            git remote set-url origin https://x-access-token:${{ secrets.MY_ANTORA_TOKEN }}@github.com/sshkodrov/${dir}.git
+    #         # Set the repository URL to use the GitHub token for authentication
+    #         git remote set-url origin https://x-access-token:${{ secrets.MY_ANTORA_TOKEN }}@github.com/sshkodrov/${dir}.git
             
-            git add docs/index.adoc
-            git commit -m "Add converted index.adoc file"
-            git push origin master  # Or 'main' if that's your default branch
-          fi
-        done
+    #         git add docs/index.adoc
+    #         git commit -m "Add converted index.adoc file"
+    #         git push origin master  # Or 'main' if that's your default branch
+    #       fi
+    #     done
 
 
 
