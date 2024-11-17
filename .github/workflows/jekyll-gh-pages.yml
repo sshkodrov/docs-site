@@ -24,12 +24,35 @@ jobs:
     # - name: Install dependencies
     #   run: npm install
 
-    - name: Clone the test1 repository
-      run: |
-        git clone https://github.com/sshkodrov/test1.git
-        git clone https://github.com/sshkodrov/test2.git
-        git clone https://github.com/sshkodrov/test3.git
-        git clone https://github.com/sshkodrov/test4.git
+    # - name: Clone the test1 repository
+    #   run: |
+    #     git clone https://github.com/sshkodrov/test1.git
+    #     git clone https://github.com/sshkodrov/test2.git
+    #     git clone https://github.com/sshkodrov/test3.git
+    #     git clone https://github.com/sshkodrov/test4.git
+ 
+    - name: Checkout test1 repository
+      uses: actions/checkout@v4
+      with:
+        repository: sshkodrov/test1
+        path: test1  
+
+    - name: Checkout test2 repository
+      uses: actions/checkout@v4
+      with:
+        repository: sshkodrov/test2
+        path: test2  
+    - name: Checkout test3 repository
+      uses: actions/checkout@v4
+      with:
+        repository: sshkodrov/test3
+        path: test3  
+
+    - name: Checkout test4 repository
+      uses: actions/checkout@v4
+      with:
+        repository: sshkodrov/test4
+        path: test4
 
     - name: Convert README.md to index.adoc
       run: |
