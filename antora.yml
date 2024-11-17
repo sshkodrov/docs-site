@@ -6,14 +6,14 @@ site:
 content:
   sources:
     - url: https://github.com/sshkodrov/test1.git
-      branches: [main]   
+      branches: master
       start_path: docs
     - url: https://github.com/sshkodrov/test2.git
-      branches: [main]
+      branches: master
       start_path: docs
     - url: https://github.com/sshkodrov/test3.git
-      branches: [main]
+      branches: master
       start_path: docs
     - url: https://github.com/sshkodrov/test4.git
-      branches: [main]
+      branches: master
       start_path: docs
