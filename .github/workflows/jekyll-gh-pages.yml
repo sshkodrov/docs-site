@@ -78,7 +78,18 @@ jobs:
             ls -l $dir/docs
           fi
         done
-
+        
+    - name: Commit converted index.adoc back to the repository
+      run: |
+        for dir in test1 test2 test3 test4; do
+          if [ -f "$dir/docs/index.adoc" ]; then
+            echo "Committing $dir/docs/index.adoc to the repository"
+             cd $dir
+               git add docs/index.adoc
+               git commit -m "Add converted index.adoc file"
+               git push origin master  
+              fi
+            done
 
     - name: Build documentation with Antora
       run: |
