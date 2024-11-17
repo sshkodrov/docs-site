@@ -46,7 +46,6 @@ jobs:
                 ' {} \;
               fi
             done
-              shell: bash 
         
 
     - name: Build documentation with Antora
