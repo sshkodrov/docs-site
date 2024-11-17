@@ -35,7 +35,11 @@ jobs:
       run: |
         for dir in test1 test2 test3 test4; do
           if [ -d "$dir/docs" ]; then
-            find $dir/docs -name "*.md" -exec bash -c 'pandoc "$0" -o "${0%.md}.adoc"' {} \;
+            # Find all .md files in the docs directories
+            find $dir/docs -name "*.md" -exec bash -c '
+              # For each .md file, convert it to index.adoc in the same docs directory
+              pandoc "$0" -o "${0%/*}/index.adoc"
+            ' {} \;
           fi
         done
 
