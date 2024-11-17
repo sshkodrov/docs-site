@@ -53,11 +53,14 @@ jobs:
         for dir in test1 test2 test3 test4; do
           if [ -f "$dir/docs/index.adoc" ]; then
             echo "Committing $dir/docs/index.adoc to the repository"
-             cd $dir
-               git add docs/index.adoc
-               git commit -m "Add converted index.adoc file"
-              fi
-            done
+            cd $dir
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add docs/index.adoc
+            git commit -m "Add converted index.adoc file"
+            git push origin master  # Or 'main' if that’s your default branch
+          fi
+        done
 
     - name: Build documentation with Antora
       run: |
