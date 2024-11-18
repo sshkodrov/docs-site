@@ -29,27 +29,31 @@ jobs:
 
     - name: Convert README.md to index.adoc
       run: |
-        for dir in test1 test2 test3 test4; do
-          if [ -d "$dir/docs/modules/ROOT/pages" ]; then
-            echo "Converting README.md to index.adoc in $dir/docs/modules/ROOT/pages"
-            # Find each README.md file and convert it to index.adoc
-            find $dir/docs/modules/ROOT/pages -name "README.md" -exec bash -c '
-              input="$0"
-              output="${input%/README.md}/index.adoc"
-              echo "Converting $input to $output"
-              pandoc "$input" -o "$output"
-              # Check if the conversion worked
-              if [ -f "$output" ]; then
-                echo "Conversion successful: $output"
-              else
-                echo "Error: Conversion failed for $input"
-              fi
-            ' {} \;
-            
-            echo "Listing files in $dir/docs"
-            ls -l $dir/docs/modules/ROOT/pages
-          fi
-        done
+          for dir in test1 test2 test3 test4; do
+            if [ -d "$dir/docs/modules/ROOT/pages" ]; then
+              echo "Converting README.md to index.adoc in $dir/docs/modules/ROOT/pages"
+              
+              find $dir/docs/modules/ROOT/pages -name "README.md" -exec bash -c '
+                input="$0"
+                output="${input%/README.md}/index.adoc"
+                echo "Converting $input to $output"
+                
+                pandoc "$input" -o "$output"
+                
+                
+                if [ -f "$output" ]; then
+                  echo "Conversion successful: $output"
+                else
+                  echo "Error: Conversion failed for $input"
+                fi
+              ' {} \;
+              
+              echo "Listing files in $dir/docs/modules/ROOT/pages"
+              ls -l $dir/docs/modules/ROOT/pages
+            else
+              echo "Directory $dir/docs/modules/ROOT/pages does not exist"
+            fi
+          done
         
     # - name: Commit converted index.adoc back to the repository
     #   run: |
