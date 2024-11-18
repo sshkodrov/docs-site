@@ -1,19 +1,19 @@
-site:
-  title: My Documentation Site
-  # start_page: 'test1::docs/index.adoc'
-  url: https://sshkodrov.github.io/docs-site/
+# site:
+#   title: My Documentation Site
+#   # start_page: 'test1::docs/index.adoc'
+#   url: https://sshkodrov.github.io/docs-site/
 
-content:
-  sources:
-    - url: https://github.com/sshkodrov/test1.git
-      branches: master
-      start_path: /
-    - url: https://github.com/sshkodrov/test2.git
-      branches: master
-      start_path: /
-    - url: https://github.com/sshkodrov/test3.git
-      branches: master
-      start_path: /
-    - url: https://github.com/sshkodrov/test4.git
-      branches: master
-      start_path: /
+# content:
+#   sources:
+#     - url: https://github.com/sshkodrov/test1.git
+#       branches: master
+#       start_path: /
+#     - url: https://github.com/sshkodrov/test2.git
+#       branches: master
+#       start_path: /
+#     - url: https://github.com/sshkodrov/test3.git
+#       branches: master
+#       start_path: /
+#     - url: https://github.com/sshkodrov/test4.git
+#       branches: master
+#       start_path: /
