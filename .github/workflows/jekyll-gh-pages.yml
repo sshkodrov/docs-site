@@ -19,9 +19,13 @@ jobs:
     - name: Clone the tests repositories
       run: |
         git clone https://github.com/sshkodrov/test1.git
+        cd test1
         git clone https://github.com/sshkodrov/test2.git
+        cd test2
         git clone https://github.com/sshkodrov/test3.git
+        cd test3
         git clone https://github.com/sshkodrov/test4.git
+        cd test4
 
     - name: Convert README.md to index.adoc
       run: |
