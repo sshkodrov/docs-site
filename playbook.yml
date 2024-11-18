@@ -1,6 +1,6 @@
 site:
   title: My Documentation Site
-  start_page: test1::index.adoc
+  start_page: 'test1::docs/index.adoc'
 
 content:
   sources:
