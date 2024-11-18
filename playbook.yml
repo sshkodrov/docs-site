@@ -1,7 +1,7 @@
 site:
   title: My Documentation Site
-  # url: https://sshkodrov.github.io/docs-site/
-  # start_page: 'ROOT::index.adoc'
+  url: https://sshkodrov.github.io/docs-site/
+  start_page: 'ROOT::nav.adoc'
 content:
   sources:
     - url: https://github.com/sshkodrov/test1.git
@@ -24,9 +24,5 @@ ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
-git:
-  ensure_git_suffix: false
-runtime:
-  fetch: true
 output:
   dir: ./build
