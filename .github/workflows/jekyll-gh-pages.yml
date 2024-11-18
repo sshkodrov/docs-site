@@ -73,6 +73,7 @@ jobs:
     - name: Build documentation with Antora
       run: |
         echo "Running Antora build..."
+        cd test1
         antora playbook.yml 
         echo "Checking output directory..."
         ls -l ./build
