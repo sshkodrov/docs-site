@@ -27,58 +27,58 @@ jobs:
         git clone https://github.com/sshkodrov/test4.git
         # cd test4
 
-    - name: Convert README.md to index.adoc
-      run: |
-          for dir in test1 test2 test3 test4; do
-            if [ -d "$dir/docs/modules/ROOT/pages" ]; then
-              echo "Converting README.md to index.adoc in $dir/docs/modules/ROOT/pages"
+    # - name: Convert README.md to index.adoc
+    #   run: |
+    #       for dir in test1 test2 test3 test4; do
+    #         if [ -d "$dir/docs/modules/ROOT/pages" ]; then
+    #           echo "Converting README.md to index.adoc in $dir/docs/modules/ROOT/pages"
               
-              find $dir/docs/modules/ROOT/pages -name "README.md" -exec bash -c '
-                input="$0"
-                output="${input%/README.md}/index.adoc"
-                echo "Converting $input to $output"
+    #           find $dir/docs/modules/ROOT/pages -name "README.md" -exec bash -c '
+    #             input="$0"
+    #             output="${input%/README.md}/index.adoc"
+    #             echo "Converting $input to $output"
                 
-                pandoc "$input" -o "$output"
+    #             pandoc "$input" -o "$output"
                 
                 
-                if [ -f "$output" ]; then
-                  echo "Conversion successful: $output"
-                else
-                  echo "Error: Conversion failed for $input"
-                fi
-              ' {} \;
+    #             if [ -f "$output" ]; then
+    #               echo "Conversion successful: $output"
+    #             else
+    #               echo "Error: Conversion failed for $input"
+    #             fi
+    #           ' {} \;
               
-              echo "Listing files in $dir/docs/modules/ROOT/pages"
-              ls -l $dir/docs/modules/ROOT/pages
-            else
-              echo "Directory $dir/docs/modules/ROOT/pages does not exist"
-            fi
-          done
+    #           echo "Listing files in $dir/docs/modules/ROOT/pages"
+    #           ls -l $dir/docs/modules/ROOT/pages
+    #         else
+    #           echo "Directory $dir/docs/modules/ROOT/pages does not exist"
+    #         fi
+    #       done
         
-    - name: Commit converted index.adoc back to the repository
-      run: |
-        # Loop over the four repositories
-        for dir in test1 test2 test3 test4; do
-          # Check if the index.adoc exists in the 'docs/modules/ROOT/pages' directory
-          if [ -f "$dir/docs/modules/ROOT/pages/index.adoc" ]; then
-            echo "Committing $dir/docs/modules/ROOT/pages/index.adoc"
+    # - name: Commit converted index.adoc back to the repository
+    #   run: |
+    #     # Loop over the four repositories
+    #     for dir in test1 test2 test3 test4; do
+    #       # Check if the index.adoc exists in the 'docs/modules/ROOT/pages' directory
+    #       if [ -f "$dir/docs/modules/ROOT/pages/index.adoc" ]; then
+    #         echo "Committing $dir/docs/modules/ROOT/pages/index.adoc"
     
-            cd $dir
+    #         cd $dir
     
-            git config user.name "github-actions"
-            git config user.email "github-actions@github.com"
+    #         git config user.name "github-actions"
+    #         git config user.email "github-actions@github.com"
     
-            git remote set-url origin https://x-access-token:${{ secrets.MY_ANTORA_TOKEN }}@github.com/sshkodrov/${dir}.git
-            git add docs/modules/ROOT/pages/index.adoc
-            git commit -m "Add converted index.adoc file"
+    #         git remote set-url origin https://x-access-token:${{ secrets.MY_ANTORA_TOKEN }}@github.com/sshkodrov/${dir}.git
+    #         git add docs/modules/ROOT/pages/index.adoc
+    #         git commit -m "Add converted index.adoc file"
     
-            git push origin master
+    #         git push origin master
             
-            cd ..
-          else
-            echo "$dir/docs/modules/ROOT/pages/index.adoc not found, skipping commit"
-          fi
-        done
+    #         cd ..
+    #       else
+    #         echo "$dir/docs/modules/ROOT/pages/index.adoc not found, skipping commit"
+    #       fi
+    #     done
 
 
 
