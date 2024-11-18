@@ -8,15 +8,19 @@ content:
     - url: https://github.com/sshkodrov/test1.git
       branches: ["master"]
       start_path: /
+      classifier: @antora/content-classifier
     - url: https://github.com/sshkodrov/test2.git
       branches: ["master"]
       start_path: /
+      classifier: @antora/content-classifier
     - url: https://github.com/sshkodrov/test3.git
       branches: ["master"]
       start_path: /
+      classifier: @antora/content-classifier
     - url: https://github.com/sshkodrov/test4.git
       branches: ["master"]
       start_path: /
+      classifier: @antora/content-classifier
 ui: 
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
