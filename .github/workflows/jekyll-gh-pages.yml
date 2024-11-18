@@ -85,4 +85,4 @@ jobs:
       with:
         personal_token: ${{ secrets.MY_ANTORA_TOKEN }}
         publish_dir: ./build/site
-        publish_branch: gh-pages1
+        publish_branch: gh-pages
