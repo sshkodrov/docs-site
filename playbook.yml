@@ -7,17 +7,17 @@ content:
       branches: ["master"] 
       start_path: /
       
-    # - url: https://github.com/sshkodrov/test2.git
-    #   branches: ["master"]
-    #   start_path: docs
+    - url: https://github.com/sshkodrov/test2.git
+      branches: ["master"]
+      start_path: /
      
-    # - url: https://github.com/sshkodrov/test3.git
-    #   branches: ["master"]
-    #   start_path: docs
+    - url: https://github.com/sshkodrov/test3.git
+      branches: ["master"]
+      start_path: /
      
-    # - url: https://github.com/sshkodrov/test4.git
-    #   branches: ["master"]
-    #   start_path: docs
+    - url: https://github.com/sshkodrov/test4.git
+      branches: ["master"]
+      start_path: /
   
 ui:
   bundle:
