@@ -41,8 +41,7 @@ jobs:
                 echo "Error: Conversion failed for $input"
               fi
             ' {} \;
-    
-            # List files in the docs directory to ensure the index.adoc exists
+            
             echo "Listing files in $dir/docs"
             ls -l $dir/docs
           fi
@@ -61,7 +60,7 @@ jobs:
             
     #         git add docs/index.adoc
     #         git commit -m "Add converted index.adoc file"
-    #         git push origin master  # Or 'main' if that's your default branch
+    #         git push origin master  
     #       fi
     #     done
 
