@@ -28,4 +28,4 @@ ui:
 # runtime:
 #   fetch: true
 output:
-  dir: /build
+  dir: ./build/site
