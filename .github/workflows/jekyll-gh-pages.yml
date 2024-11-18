@@ -73,7 +73,7 @@ jobs:
     - name: Build documentation with Antora
       run: |
         echo "Running Antora build..."
-        antora --fetch playbook.yml 
+        antora --fetch playbook.yml --stacktrace
         echo "Checking output directory..."
         ls -l ./build
         echo "Listing contents of the build folder..."
