@@ -19,7 +19,7 @@ jobs:
     - name: Clone the tests repositories
       run: |
         git clone https://github.com/sshkodrov/test1.git
-        cd test1
+        # cd test1
         git clone https://github.com/sshkodrov/test2.git
         # cd test2
         git clone https://github.com/sshkodrov/test3.git
