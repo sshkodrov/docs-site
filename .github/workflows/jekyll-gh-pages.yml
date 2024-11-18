@@ -87,14 +87,14 @@ jobs:
         echo "Running Antora build..."
         antora playbook.yml
         echo "Checking output directory..."
-        ls -l ./build
+        ls -l ./build/site
         echo "Listing contents of the build folder..."
-        ls -R ./build
+        ls -R ./build/site
 
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         personal_token: ${{ secrets.MY_ANTORA_TOKEN }}
-        publish_dir: ./build
+        publish_dir: ./build/site
         publish_branch: gh-pages
