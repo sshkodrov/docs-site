@@ -27,12 +27,12 @@ ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
-  default_layout: with_menu
+    
 output:
   clean: true
   dir: ./build/site
+  
 runtime:
   fetch: true
   cache_dir: ./cache
-# urls:
-#   html_extension_style: indexify
+
