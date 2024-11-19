@@ -30,7 +30,7 @@ ui:
   default_layout: with_menu
 output:
   clean: true
-  dir: ./public
+  dir: ./build/site
 runtime:
   fetch: true
   cache_dir: ./cache
