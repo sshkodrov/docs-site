@@ -29,7 +29,6 @@ ui:
     snapshot: true
     
 output:
-  clean: true
   dir: ./build/site
   
 runtime:
