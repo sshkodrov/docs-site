@@ -1,7 +1,6 @@
 site:
   title: My Documentation Site
   url: https://sshkodrov.github.io/docs-site/
-  # start_page: 'ROOT::index.adoc'
   
 content:
   sources:
