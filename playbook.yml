@@ -7,19 +7,19 @@ content:
   sources:
     - url: https://github.com/sshkodrov/test1.git
       branches: [ "master" ] 
-      start_path: docs/modules/ROOT/pages
+      start_path: docs/modules/ROOT
       
     - url: https://github.com/sshkodrov/test2.git
       branches: [ "master" ]
-      start_path: docs/modules/ROOT/pages
+      start_path: docs/modules/ROOT
      
     - url: https://github.com/sshkodrov/test3.git
       branches: [ "master" ]
-      start_path: docs/modules/ROOT/pages
+      start_path: docs/modules/ROOT
      
     - url: https://github.com/sshkodrov/test4.git
       branches: [ "master" ]
-      start_path: docs/modules/ROOT/pages
+      start_path: docs/modules/ROOT
   
 ui:
   bundle:
