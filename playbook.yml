@@ -34,5 +34,5 @@ output:
   
 runtime:
   fetch: true
-  cache_dir: ./cache
+
 
