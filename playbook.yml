@@ -4,6 +4,10 @@ site:
   start_page: 'test1::index.adoc' 
 content:
   sources:
+    - url: https://github.com/sshkodrov/start-page.git
+      branches: [ "main" ]
+      start_path: docs
+  
     - url: https://github.com/sshkodrov/test1.git
       branches: [ "master" ]
       start_path: docs
