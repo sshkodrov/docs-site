@@ -23,12 +23,16 @@ content:
     - url: https://github.com/sshkodrov/test5.git
       branches: [ "main" ] 
       start_path: docs
-runtime:
-  fetch: true
-  
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
-    
+    url: https://gitlab.com/fedora/docs/docs-website/ui-bundle/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  default_layout: with_menu
 output:
-  dir: ./build/site
+  clean: true
+  dir: ./public
+runtime:
+  fetch: true
+  cache_dir: ./cache
+urls:
+  html_extension_style: indexify
