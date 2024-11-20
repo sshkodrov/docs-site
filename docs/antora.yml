@@ -1,0 +1,4 @@
+name: official
+title: Front Page
+version: ~
+start_page: startpage:index.adoc
