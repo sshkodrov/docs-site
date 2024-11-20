@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
+<loc>https://sshkodrov.github.io/docs-site/sitemap-official.xml</loc>
+</sitemap>
+<sitemap>
 <loc>https://sshkodrov.github.io/docs-site/sitemap-ROOT.xml</loc>
 </sitemap>
 <sitemap>
