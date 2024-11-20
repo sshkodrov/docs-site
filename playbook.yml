@@ -8,9 +8,9 @@ content:
     #   branches: [ "main" ] 
     #   start_path: docs 
     
-     - url: https://github.com/sshkodrov/docs-site.git
-       branches: [ "main" ]
-       start_path: docs
+    - url: https://github.com/sshkodrov/docs-site.git
+      branches: [ "main" ]
+      start_path: docs
   
     - url: https://github.com/sshkodrov/test1.git
       branches: [ "master" ]
