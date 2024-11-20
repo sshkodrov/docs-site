@@ -1,7 +1,7 @@
 site:
   title: My Documentation Site
   url: https://sshkodrov.github.io/docs-site/ 
-  start_page: 'test1:named-module:start.adoc'
+  start_page: 'ROOT::startpage.adoc'
 content: 
   sources:
     # - url: https://github.com/sshkodrov/start-page.git
