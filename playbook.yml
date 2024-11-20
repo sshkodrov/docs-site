@@ -14,7 +14,7 @@ content:
        
     - url: https://github.com/sshkodrov/test2.git
       branches: [ "master" ]
-      start_path: docs/modules
+      start_path: docs
      
     # - url: https://github.com/sshkodrov/test3.git
     #   branches: [ "master" ]
