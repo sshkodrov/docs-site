@@ -27,15 +27,7 @@ content:
     - url: https://github.com/sshkodrov/test5.git
       branches: [ "main" ] 
       start_path: docs
-navigation:
-  - title: "Root Module"
-    url: "ROOT::index.adoc"
-  - title: "Test1 Documentation"
-    url: "test1::pages/index.adoc"
-  - title: "Test2 Documentation"
-    url: "test2::pages/index.adoc"
-  - title: "Test3 Documentation"
-    url: "test3::pages/index.adoc"
+
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
